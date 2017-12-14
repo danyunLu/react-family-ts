@@ -6,9 +6,6 @@ export default class Nav extends Component {
         return (
             <ul>
                 <li><Link to="/">首页</Link></li>
-                <li><Link to="/page1">page1</Link></li>
-                <li><Link to="/counter">counter</Link></li>
-                <li><Link to="/userinfo">userinfo</Link></li>
             </ul>
         )
     }

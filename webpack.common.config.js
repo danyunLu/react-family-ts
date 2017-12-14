@@ -37,7 +37,7 @@ module.exports = {
     },
     devServer: {
         //hot:true, //模块热替换 等同命令 --hot
-        port: 8080,
+        port: 8088,
         contentBase: path.join(__dirname, './dist'),
         historyApiFallback: true,
         host: '0.0.0.0'
