@@ -1,2 +1,2 @@
 # react-family-ts
-typescript
+typescript版本
