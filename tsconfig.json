@@ -1,14 +1,5 @@
 {
     "compilerOptions": {
-        // "baseUrl": "./",
-        // "paths": {
-        //     "pages": ["src/pages"],
-        //     "components": ["src/components"],
-        //     "router": ["src/router"],
-        //     "actions": ["src/redux/actions"],
-        //     "reducers": ["src/redux/reducers"],
-        //     "mock": ["mock"]
-        // },
         "target": "es6",
         "jsx": "react",
         "moduleResolution": "node",

@@ -17,8 +17,8 @@ renderWithHotReload(App);
  * 热更新
  */
 if (module.hot) {
-    module.hot.accept('components/App/App', () => {
-        const NextApp = require('components/App/App').default;
+    module.hot.accept('./components/App/App', () => {
+        const NextApp = require('./components/App/App').default;
         renderWithHotReload(NextApp);
     });
 }
