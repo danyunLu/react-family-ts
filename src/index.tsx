@@ -34,18 +34,3 @@ function renderWithHotReload(RootElement) {
         document.getElementById('app')
     )
 }
-// class MainComponent extends React.Component<any, any> {
-//   render() {
-//     return (
-//       <AppContainer>
-//         <Provider store={store}>
-//           <Router>
-//             <App />
-//           </Router>
-//         </Provider>
-//       </AppContainer>
-//     );
-//   }
-// }
-
-// render(<MainComponent />, document.getElementById("app"));
