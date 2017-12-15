@@ -1,6 +1,8 @@
 //通用配置
 const path = require('path');
 const webpack = require('webpack');
+// const { TsConfigPathsPlugin } = require('awesome-typescript-loader');
+//const { CheckerPlugin } = require('awesome-typescript-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 
@@ -33,6 +35,12 @@ module.exports = {
                     limit: 8192
                 }
             }]
+        },{ 
+            test: /\.tsx?$/, 
+            loader: ["awesome-typescript-loader"]
+        },{
+            test: /\.ts$/,
+            loader: 'ts-loader'
         }]
     },
     devServer: {
@@ -46,14 +54,7 @@ module.exports = {
      * 文件路径优化 
      */
     resolve: {
-        alias: {
-            pages: path.join(__dirname, 'src/pages'),
-            components: path.join(__dirname, 'src/components'),
-            router: path.join(__dirname, 'src/router'),
-            actions: path.join(__dirname, 'src/redux/actions'),
-            reducers: path.join(__dirname, 'src/redux/reducers'),
-            mock: path.join(__dirname, 'mock'),
-        }
+        extensions: [".ts", ".tsx", ".js","json"]
     },
     plugins: [
         //
@@ -69,6 +70,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'runtime'
         }),
+        //new CheckerPlugin()
     ],
     devtool: "inline-source-map"
 };
