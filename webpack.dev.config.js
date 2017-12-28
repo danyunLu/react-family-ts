@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const path = require('path');
 const commonConfig = require('./webpack.common.config.js');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const devConfig = {
     devtool: "inline-source-map",//调试
     /*入口*/
@@ -27,7 +28,10 @@ const devConfig = {
     plugins:[
         new webpack.DefinePlugin({
                MOCK: true
-        })
+        }),
+        new CopyWebpackPlugin([
+            { from: './src/assets', to: 'assets' },
+        ])
     ],
     devServer: {
         //hot:true, //模块热替换 等同命令 --hot
