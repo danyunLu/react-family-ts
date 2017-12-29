@@ -1,24 +1,19 @@
 import { compose, withHandlers, lifecycle } from "recompose";
 import { Dispatch } from "redux";
 import { connect } from "react-redux";
-import * as Immutable from "immutable";
+// import * as Immutable from "immutable";
+import {increment,} from "./actions"
 import { IProps } from "./constant";
 
-const mapStateToProps = (state: Immutable.Map<string, any>, ownProps: any) => {
+const mapStateToProps = (state: any, ownProps: any) => {
   return {
-    count: state.count
+    banner: state.banner
   };
 };
 const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: any) => {
   return {
     increment: () => {
-      // dispatch(increment())
-    },
-    decrement: () => {
-      // dispatch(decrement())
-    },
-    reset: () => {
-      // dispatch(reset())
+      dispatch(increment())
     }
   };
 };
@@ -27,7 +22,7 @@ export const hoc = compose<IProps, any>(
   withHandlers({
     init: (props: IProps) => {
       return () => {
-        console.log(77);
+        props.increment()
       };
     }
   }),

@@ -6,8 +6,10 @@ import "./styles/component.css";
 
 export class Component extends React.Component<IProps, any> {
   render() {
+    let {banner} = this.props;
+    console.log();    
     return <div className="m-home-banner">
-        banner ~^00^~
+        banner ~^00^~ {banner.count}
     </div>;
   }
 }

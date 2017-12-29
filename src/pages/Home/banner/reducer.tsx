@@ -1,4 +1,4 @@
-import {INCREMENT} from "./actions";
+import { INCREMENT } from "./actions";
 /**
  * 初始化state
  */
@@ -6,8 +6,13 @@ const initState = {
     count: 0
 }
 
-export default function reducer(state = initState, action){
-    switch(action.type){
-        case INCREMENT: return {}
+export default function reducer(state = initState, action) {
+    switch (action.type) {
+        case INCREMENT:
+            return {
+                count: state.count + 1,
+            }
+        default:
+            return state
     }
 }
